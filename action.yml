@@ -1,0 +1,25 @@
+name: 'Review Browserstack Screenshots'
+author: 'cc-kawakami'
+description: 'Comment Browserstack screenshots to pull requests'
+inputs:
+  pr_number:
+    description: 'The pull request number that triggered the workflow'
+    required: true
+  commit_sha:
+    description: 'The commit SHA that triggered the workflow'
+    required: true
+  repo_token:
+    description: 'Github API Token'
+    required: true
+  browserstack_username: 
+    description: 'Browserstack user name'
+    required: true
+  browserstack_access_key:
+    description: 'Browserstack access key'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'camera'
+  color: 'blue'

@@ -1,0 +1,15 @@
+📸 Took screenshots by BrowserStack.
+
+🔨 Commit: <%= commit_sha %>
+
+🎯 Target: <%= target_url %>
+
+👀 On BrowserStack: <%= preview_url %>
+
+<% if should_show_table %>
+|OS|Browser|Screenshot|
+|--|--|--|
+<% screenshots.each do |s| %>
+|<%= s[:os] %> <%= s[:os_version] %>|<%= s[:browser] %> <%= s[:browser_version] %>|![Screenshot](<%= s[:image_url] %>)|
+<% end %>
+<% end %>
